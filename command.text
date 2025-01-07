@@ -1,0 +1,95 @@
+## Git Commands Cheatsheet
+
+### Initial Setup
+
+1. **Initialize Git (if not already initialized):**
+   git init
+
+2. **Add your files to the repository:**
+   git add .
+
+3. **Commit your changes:**
+   git commit -m "Initial commit"
+
+4. **Add the remote repository URL:**
+   git remote add origin [repository-link]
+
+5. **Push your changes to the remote repository:**
+   git push -u origin [branch]
+
+### Check all commits
+git log
+git log --oneline
+
+### Create a new branch
+git checkout -b [branch]
+
+### Link the new branch to remote-origin branch
+git branch --set-upstream-to=origin/[branch] [branch]
+
+### Fetch all branches and updates from the remote repository
+git fetch --all
+
+### Check all remote branches
+git ls-remote --heads origin
+
+### Stash changes
+git stash
+
+### Stash changes with a custom message
+git stash save "stash message"
+
+### Create a new branch from a stash
+git stash branch [branch] stash@{n}
+
+### List all stashes
+git stash list
+
+### Apply stash changes without removing them from the stash list
+git stash apply
+
+### Remove a stash from the list
+git stash drop
+
+### Apply and remove the latest stash from the list
+git stash pop
+
+### Show the changes recorded in a stash
+git stash show
+
+### Stash only the staged changes with a custom message
+git stash push --staged -m "Stash only staged changes"
+
+### Rebase commands
+git pull --rebase <upstream> <branch>
+
+### Abort a merge
+git merge --abort
+
+### Merge a branch into the current branch
+git merge [branch-to-merge]
+
+### Revert a commit by its hash
+git revert [commit-hash]
+git revert --abort
+
+### Undo a revert by cherry-picking the original commit
+git cherry-pick [commit_hash]
+
+### Switch to another branch before deleting a branch
+git checkout [branch]
+
+### Delete a local branch
+git branch -d [branch]
+
+### Force delete a local branch
+git branch -D [branch]
+
+### Delete a remote branch on GitHub
+git push origin --delete [branch]
+
+### Reset to the last commit and get changes in the staging area
+git reset --soft HEAD^1
+
+### Show all commits with a graph
+git log --graph --oneline --branches
